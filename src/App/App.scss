@@ -1,0 +1,9 @@
+@import "../scss/variables";
+@import "../scss/fonts";
+@import "../scss/colors";
+
+body {
+  font-family: $body-fonts;
+  font-size: $base-font-size;
+  color: $main-color;
+}
