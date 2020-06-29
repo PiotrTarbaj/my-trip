@@ -1,0 +1,13 @@
+@import "../scss/mixins";
+
+.container-cars {
+  @include main-container(gray, "../images/background-cars.jpg");
+
+  h1 {
+    color: red;
+    font-weight: 700;
+    font-size: 54px;
+    background-color: white;
+    padding: 20px;
+  }
+}
