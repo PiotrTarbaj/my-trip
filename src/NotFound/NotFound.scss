@@ -1,0 +1,14 @@
+@import "../scss/mixins";
+
+.container-notfound {
+  @include main-container(gray, "../images/background-notfound.jpg");
+  flex-direction: column;
+  h1 {
+    color: red;
+    font-weight: 700;
+    font-size: 54px;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
