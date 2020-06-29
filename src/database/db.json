@@ -1,0 +1,64 @@
+{
+  "cars": [
+    {
+      "brand": "Ford",
+      "model": "Mondeo",
+      "fuel": "benzyna",
+      "average": "6.7",
+      "speed": "56",
+      "id": 1
+    },
+    {
+      "brand": "Renault",
+      "model": "Megane",
+      "fuel": "olej napędowy",
+      "average": "4",
+      "speed": "74",
+      "id": 2
+    },
+    {
+      "brand": "Fiat",
+      "model": "Tipo",
+      "fuel": "benzyna",
+      "average": "6",
+      "speed": "40",
+      "id": 3
+    },
+    {
+      "brand": "Fiat",
+      "model": "Multipla",
+      "fuel": "olej napędowy",
+      "average": "8",
+      "speed": "40",
+      "id": 4
+    },
+    {
+      "brand": "Marka",
+      "model": "Model",
+      "fuel": "olej napędowy",
+      "average": "9",
+      "speed": "36",
+      "id": 5
+    },
+    {
+      "brand": "1",
+      "model": "2",
+      "fuel": "olej napędowy",
+      "average": "3",
+      "speed": "4",
+      "id": 6
+    }
+  ],
+  "fuel": [
+    {
+      "name": "benzyna",
+      "price": "4.15",
+      "id": 1
+    },
+    {
+      "name": "olej napędowy",
+      "price": "4.23",
+      "id": 2
+    }
+  ]
+}
