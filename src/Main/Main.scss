@@ -1,13 +1,67 @@
 @import "../scss/mixins";
+@import "../scss/colors";
 
 .container-main {
   @include main-container(gray, "../images/background-main.jpg");
 
-  h1 {
-    color: red;
-    font-weight: 700;
-    font-size: 54px;
+  section {
     background-color: white;
-    padding: 20px;
+    font-weight: 700;
+    font-size: 2rem;
+
+    @include mobile {
+      width: 100%;
+      height: auto;
+      padding: 40px 0;
+      margin: 10px 0;
+    }
+
+    @include tablet {
+      width: 50%;
+      height: auto;
+      padding: 40px 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        animation: pulse 1s infinite;
+        animation-timing-function: linear;
+      }
+    }
+
+    @include desktop {
+      width: 40%;
+      height: auto;
+      padding: 40px 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      font-size: 2.6rem;
+      &:hover {
+        animation: pulse 1s infinite;
+        animation-timing-function: linear;
+      }
+    }
+
+    a {
+      text-align: center;
+      text-decoration: none;
+      color: $main-color-header;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
   }
 }
