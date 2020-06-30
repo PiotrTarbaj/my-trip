@@ -3,12 +3,29 @@
 .container-notfound {
   @include main-container(gray, "../images/background-notfound.jpg");
   flex-direction: column;
-  h1 {
-    color: red;
-    font-weight: 700;
-    font-size: 54px;
+  section {
+    width: 40vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 40px 20px;
+    border-radius: 20px;
+    h1 {
+      color: red;
+      font-weight: 700;
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    h3 {
+      color: red;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    a {
+      text-decoration: none;
+    }
   }
 }
