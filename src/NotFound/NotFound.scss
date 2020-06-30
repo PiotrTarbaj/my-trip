@@ -1,4 +1,5 @@
 @import "../scss/mixins";
+@import "../scss/colors";
 
 .container-notfound {
   @include main-container(gray, "../images/background-notfound.jpg");
@@ -14,13 +15,13 @@
     border-radius: 20px;
     text-align: center;
     h1 {
-      color: red;
+      color: $main-color-header;
       font-weight: 700;
       font-size: 4rem;
       margin-bottom: 20px;
     }
     h3 {
-      color: red;
+      color: $main-color-header;
       font-weight: 700;
       font-size: 2rem;
       margin-bottom: 20px;
