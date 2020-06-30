@@ -1,13 +1,82 @@
 @import "../scss/mixins";
+@import "../scss/colors";
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 .container-fuels {
   @include main-container(gray, "../images/background-fuels.jpg");
 
   h1 {
-    color: red;
-    font-weight: 700;
-    font-size: 54px;
-    background-color: white;
-    padding: 20px;
+    @include header-container;
+  }
+
+  ul {
+    @include header-container;
+    li {
+      .fuel-item {
+        display: flex;
+
+        @include mobile {
+          flex-direction: column;
+          width: 100%;
+          height: auto;
+          padding: 0;
+          margin: 10px 0;
+        }
+        @include tablet {
+          flex-direction: column;
+          width: 100%;
+          height: auto;
+          padding: 0;
+          margin: 10px 0;
+        }
+        @include desktop {
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+          height: auto;
+          padding: 0;
+          margin: 10px 0;
+        }
+      }
+      .fuel-item--name {
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+      .fuel-item--price {
+        font-family: "Press Start 2P", cursive;
+        background-color: black;
+        padding: 10px 15px;
+        color: gold;
+      }
+      button {
+        @include button-action;
+      }
+    }
+  }
+
+  a {
+    @include nav-link;
+  }
+}
+
+.container-fuels--edit {
+  height: 30vh;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: $main-color-header;
+  form {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    input[type="submit"] {
+      margin: 20px 0;
+      @include button-action-reverse;
+    }
   }
 }

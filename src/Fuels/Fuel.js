@@ -6,8 +6,10 @@ const Fuel = ({ fuel, show, onEdit }) => {
   } else {
     return (
       <li>
-        <p>{fuel.name}</p>
-        <p>{fuel.price}</p>
+        <section className="fuel-item">
+          <div className="fuel-item--name">{fuel.name}</div>
+          <div className="fuel-item--price">{fuel.price}</div>
+        </section>
         <button onClick={() => onEdit(fuel)}>Edytuj</button>
       </li>
     );

@@ -48,7 +48,7 @@ const Fuels = ({ show, value, onChange }) => {
   } else
     return (
       <div className="container-fuels">
-        <h1>Fuel</h1>
+        <h1>Koszty paliwa</h1>
         {isEdit && <EditFuel fuel={isEdit} onSave={handleSave} />}
         <ul>
           {fuels.length > 0 &&
@@ -56,7 +56,7 @@ const Fuels = ({ show, value, onChange }) => {
               <Fuel key={fuel.id} fuel={fuel} onEdit={handleEdit} />
             ))}
         </ul>
-        <Link to="/">Przejdź do strony głównej</Link>
+        <Link to="/">Powrót do strony głównej</Link>
       </div>
     );
 };

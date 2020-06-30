@@ -23,21 +23,13 @@ const EditFuel = ({ fuel, onSave }) => {
       });
   };
 
-  const containerStyle = {
-    height: "80vh",
-    width: "80vw",
-    display: "flex",
-    position: "absolute",
-    backgroundColor: "#bada55",
-  };
-
   const editStyle = {
     height: "200px",
     width: "200px",
   };
 
   return (
-    <div style={containerStyle}>
+    <div className="container-fuels--edit">
       <form style={editStyle} onSubmit={handleSubmit}>
         <input
           type="text"
