@@ -62,12 +62,13 @@
 
 .container-fuels--edit {
   height: 30vh;
-  width: 40vw;
+  width: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   background-color: $main-color-header;
+  border-radius: 10px;
   form {
     width: 50%;
     height: auto;
