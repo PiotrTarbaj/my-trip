@@ -32,7 +32,7 @@ const AddCar = ({ onAdd }) => {
   };
 
   return (
-    <>
+    <div className="container-cars--edit">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -65,7 +65,7 @@ const AddCar = ({ onAdd }) => {
         />
         <input type="submit" value="Dodaj" />
       </form>
-    </>
+    </div>
   );
 };
 

@@ -10,9 +10,17 @@ const Car = ({ car, onEdit, onDelete }) => {
           </h3>
         </div>
         <div className="car-item--info">
-          <div>Paliwo: {car.fuel}</div>
-          <div>Średnie spalanie: {car.average}L/100km</div>
-          <div>Średnia prędkość: {car.speed} km/h</div>
+          <div>
+            Paliwo: <span className="text-bold">{car.fuel}</span>
+          </div>
+          <div>
+            Średnie spalanie:{" "}
+            <span className="text-bold">{car.average}L/100km</span>
+          </div>
+          <div>
+            Średnia prędkość:{" "}
+            <span className="text-bold">{car.speed} km/h</span>
+          </div>
         </div>
       </section>
       <button onClick={() => onEdit(car)}>Edytuj</button>

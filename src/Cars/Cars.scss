@@ -13,9 +13,16 @@
   }
 
   ul {
-    @include header-container;
     li {
-      margin-bottom: 10px;
+      padding: 40px 20px;
+      margin: 20px 0;
+      border-radius: 20px;
+      border: 5px solid $main-color-header;
+      color: $main-color-header;
+      background-color: white;
+      font-weight: 700;
+      font-size: 2.6rem;
+      text-align: center;
 
       .car-item {
         display: flex;
@@ -23,10 +30,9 @@
 
         @include mobile {
           flex-direction: column;
-          width: 100%;
+          width: 100vw;
           height: auto;
           padding: 0;
-          margin: 10px 0;
         }
         @include tablet {
           flex-direction: column;
@@ -43,15 +49,22 @@
           padding: 0;
           margin: 10px 0;
         }
-      }
-      .car-item--header {
-        font-size: 1.4rem;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      .car-item--info {
-        font-weight: 600;
-        font-size: 1rem;
+
+        .car-item--header {
+          font-size: 1.4rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin: 10px 0;
+          padding: 10px;
+        }
+        .car-item--info {
+          font-weight: 600;
+          font-size: 1rem;
+          padding: 10px;
+          div {
+            margin-bottom: 10px;
+          }
+        }
       }
       button {
         @include button-action;
@@ -59,7 +72,20 @@
     }
   }
 
+  button {
+    @include button-action;
+  }
+
   a {
     @include nav-link;
   }
+}
+
+.text-bold {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.container-cars--edit {
+  @include container-form-edit;
 }

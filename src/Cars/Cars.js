@@ -8,6 +8,7 @@ import "../Cars/Cars.scss";
 const Cars = () => {
   const [cars, setCars] = useState([]);
   const [isEdit, setEdit] = useState(false);
+  const [isAdd, setAdd] = useState(false);
 
   const getDataFromApi = () => {
     fetch("http://localhost:3000/cars")
@@ -19,6 +20,7 @@ const Cars = () => {
 
   const handleAdd = (car) => {
     setCars([...cars, car]);
+    setAdd(false);
   };
 
   const handleEdit = (car) => {
@@ -28,6 +30,10 @@ const Cars = () => {
   const handleSave = () => {
     setEdit(false);
     getDataFromApi();
+  };
+
+  const handleClick = () => {
+    setAdd(true);
   };
 
   const deleteSelectedFromAPI = (id) => {
@@ -48,8 +54,9 @@ const Cars = () => {
     <div className="container-cars">
       <div className="background-fixed"></div>
       <h1>Moje samochody</h1>
+      <button onClick={handleClick}>Dodaj samochód</button>
       {isEdit && <EditCar car={isEdit} onSave={handleSave} />}
-      <AddCar onAdd={handleAdd} />
+      {isAdd && <AddCar onAdd={handleAdd} />}
       <ul>
         {cars.length > 0 &&
           cars.map((car, i) => (

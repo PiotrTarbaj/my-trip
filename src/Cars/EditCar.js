@@ -30,22 +30,10 @@ const EditCar = ({ car, onSave }) => {
       });
   };
 
-  const containerStyle = {
-    height: "80vh",
-    width: "80vw",
-    display: "flex",
-    position: "absolute",
-    backgroundColor: "#bada55",
-  };
-
-  const editStyle = {
-    height: "200px",
-    width: "200px",
-  };
-
   return (
-    <div style={containerStyle}>
-      <form style={editStyle} onSubmit={handleSubmit}>
+    <div className="container-cars--edit">
+      <form onSubmit={handleSubmit}>
+        <label>Marka:</label>
         <input
           type="text"
           name="brand"
@@ -53,6 +41,7 @@ const EditCar = ({ car, onSave }) => {
           value={brand}
           onChange={(e) => setBrand(e.target.value)}
         />
+        <label>Model:</label>
         <input
           type="text"
           name="model"
@@ -60,7 +49,9 @@ const EditCar = ({ car, onSave }) => {
           value={model}
           onChange={(e) => setModel(e.target.value)}
         />
+        <label>Paliwo:</label>
         <Fuels show="select" value={fuel} onChange={setFuel} />
+        <label>Średnie spalanie:</label>
         <input
           type="text"
           name="average"
@@ -68,6 +59,7 @@ const EditCar = ({ car, onSave }) => {
           value={average}
           onChange={(e) => setAverage(e.target.value)}
         />
+        <label>Średnia prędkość:</label>
         <input
           type="text"
           name="speed"
