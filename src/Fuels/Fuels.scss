@@ -4,7 +4,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 .container-fuels {
-  @include main-container(gray, "../images/background-fuels.jpg");
+  @include main-container;
+
+  .background-fixed {
+    @include background-fixed("../images/background-fuels.jpg");
+  }
 
   h1 {
     @include header-container;

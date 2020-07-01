@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Fuel from "./Fuel";
 import EditFuel from "./EditFuel";
+import LinkTo from "../LinkTo/LinkTo";
 import "../Fuels/Fuels.scss";
 
 const Fuels = ({ show, value, onChange }) => {
@@ -48,6 +48,7 @@ const Fuels = ({ show, value, onChange }) => {
   } else
     return (
       <div className="container-fuels">
+        <div className="background-fixed"></div>
         <h1>Koszty paliwa</h1>
         {isEdit && <EditFuel fuel={isEdit} onSave={handleSave} />}
         <ul>
@@ -56,7 +57,7 @@ const Fuels = ({ show, value, onChange }) => {
               <Fuel key={fuel.id} fuel={fuel} onEdit={handleEdit} />
             ))}
         </ul>
-        <Link to="/">Powrót do strony głównej</Link>
+        <LinkTo path="/" title="Powrót do strony głównej" />
       </div>
     );
 };
