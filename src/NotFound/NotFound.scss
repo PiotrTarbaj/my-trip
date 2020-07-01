@@ -2,8 +2,12 @@
 @import "../scss/colors";
 
 .container-notfound {
-  @include main-container(gray, "../images/background-notfound.jpg");
-  flex-direction: column;
+  @include main-container;
+
+  .background-fixed {
+    @include background-fixed("../images/background-notfound.jpg");
+  }
+
   section {
     width: 40vw;
     height: auto;
@@ -26,8 +30,9 @@
       font-size: 2rem;
       margin-bottom: 20px;
     }
-    a {
-      text-decoration: none;
-    }
+  }
+
+  a {
+    @include nav-link;
   }
 }
