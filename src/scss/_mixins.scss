@@ -30,7 +30,7 @@
   color: $main-color-header;
   background-color: white;
   font-weight: 700;
-  font-size: 2.6rem;
+  font-size: 2.2em;
   text-align: center;
 }
 
@@ -38,6 +38,7 @@
   font-size: 1rem;
   border: 0;
   padding: 10px 15px;
+  margin: 0 4px;
   border-radius: 10px;
   text-decoration: none;
   &:hover {
@@ -55,6 +56,30 @@
   color: $main-color-header;
   background-color: white;
   @include button-action-content;
+}
+
+@mixin container-form-edit {
+  width: 30vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: $main-color-header;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  form {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    input[type="submit"] {
+      @include button-action-reverse;
+      margin: 20px 0;
+    }
+  }
 }
 
 @mixin nav-link {
