@@ -1,7 +1,7 @@
 @import "../scss/mixins";
 
 .container-map {
-  @include main-container(gray, "../images/background-map.jpg");
+  @include main-container;
 
   h1 {
     color: red;
