@@ -13,7 +13,7 @@
       "model": "Megane",
       "fuel": "olej napędowy",
       "average": "4",
-      "speed": "74",
+      "speed": "77",
       "id": 2
     },
     {
@@ -41,23 +41,23 @@
       "id": 5
     },
     {
-      "brand": "1",
-      "model": "2",
-      "fuel": "olej napędowy",
-      "average": "3",
-      "speed": "4",
+      "brand": "11",
+      "model": "22",
+      "fuel": "benzyna",
+      "average": "33",
+      "speed": "44",
       "id": 6
     }
   ],
   "fuel": [
     {
       "name": "benzyna",
-      "price": "4.13",
+      "price": "4.11",
       "id": 1
     },
     {
       "name": "olej napędowy",
-      "price": "4.28",
+      "price": "4.25",
       "id": 2
     }
   ]
