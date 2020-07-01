@@ -4,8 +4,8 @@
       "brand": "Ford",
       "model": "Mondeo",
       "fuel": "benzyna",
-      "average": "6.7",
-      "speed": "56",
+      "average": "6.75",
+      "speed": "77",
       "id": 1
     },
     {
@@ -17,36 +17,20 @@
       "id": 2
     },
     {
-      "brand": "Fiat",
-      "model": "Tipo",
-      "fuel": "benzyna",
-      "average": "6",
-      "speed": "40",
+      "brand": "",
+      "model": "",
+      "fuel": "",
+      "average": "",
+      "speed": "",
       "id": 3
     },
     {
-      "brand": "Fiat",
-      "model": "Multipla",
-      "fuel": "olej napędowy",
-      "average": "8",
-      "speed": "40",
+      "brand": "",
+      "model": "",
+      "fuel": "",
+      "average": "",
+      "speed": "",
       "id": 4
-    },
-    {
-      "brand": "Marka",
-      "model": "Model",
-      "fuel": "olej napędowy",
-      "average": "9",
-      "speed": "36",
-      "id": 5
-    },
-    {
-      "brand": "11",
-      "model": "22",
-      "fuel": "benzyna",
-      "average": "33",
-      "speed": "44",
-      "id": 6
     }
   ],
   "fuel": [
