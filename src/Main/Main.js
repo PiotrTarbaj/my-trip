@@ -5,6 +5,7 @@ import "../Main/Main.scss";
 const Main = () => {
   return (
     <div className="container-main">
+      <div className="background-fixed"></div>
       <section>
         <Link to="/cars">
           <h2>Moje samochody</h2>

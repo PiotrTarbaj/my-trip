@@ -2,7 +2,11 @@
 @import "../scss/colors";
 
 .container-main {
-  @include main-container(gray, "../images/background-main.jpg");
+  @include main-container;
+
+  .background-fixed {
+    @include background-fixed("../images/background-main.jpg");
+  }
 
   section {
     background-color: white;
