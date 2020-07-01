@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Car from "./Car";
 import EditCar from "./EditCar";
 import AddCar from "./AddCar";
-import "../";
+import LinkTo from "../LinkTo/LinkTo";
+import "../Cars/Cars.scss";
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
@@ -44,8 +45,9 @@ const Cars = () => {
   }, []);
 
   return (
-    <>
-      <h1>Car</h1>
+    <div className="container-cars">
+      <div className="background-fixed"></div>
+      <h1>Moje samochody</h1>
       {isEdit && <EditCar car={isEdit} onSave={handleSave} />}
       <AddCar onAdd={handleAdd} />
       <ul>
@@ -59,7 +61,8 @@ const Cars = () => {
             />
           ))}
       </ul>
-    </>
+      <LinkTo path="/" title="Powrót do strony głównej" />
+    </div>
   );
 };
 

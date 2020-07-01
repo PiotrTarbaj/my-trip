@@ -1,13 +1,65 @@
 @import "../scss/mixins";
+@import "../scss/colors";
 
 .container-cars {
-  @include main-container(gray, "../images/background-cars.jpg");
+  @include main-container;
+
+  .background-fixed {
+    @include background-fixed("../images/background-cars.jpg");
+  }
 
   h1 {
-    color: red;
-    font-weight: 700;
-    font-size: 54px;
-    background-color: white;
-    padding: 20px;
+    @include header-container;
+  }
+
+  ul {
+    @include header-container;
+    li {
+      margin-bottom: 10px;
+
+      .car-item {
+        display: flex;
+        color: black;
+
+        @include mobile {
+          flex-direction: column;
+          width: 100%;
+          height: auto;
+          padding: 0;
+          margin: 10px 0;
+        }
+        @include tablet {
+          flex-direction: column;
+          width: 100%;
+          height: auto;
+          padding: 0;
+          margin: 10px 0;
+        }
+        @include desktop {
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+          height: auto;
+          padding: 0;
+          margin: 10px 0;
+        }
+      }
+      .car-item--header {
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .car-item--info {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+      button {
+        @include button-action;
+      }
+    }
+  }
+
+  a {
+    @include nav-link;
   }
 }
