@@ -65,23 +65,5 @@
 }
 
 .container-fuels--edit {
-  height: 30vh;
-  width: 30vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  background-color: $main-color-header;
-  border-radius: 10px;
-  form {
-    width: 50%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    input[type="submit"] {
-      margin: 20px 0;
-      @include button-action-reverse;
-    }
-  }
+  @include container-form-edit;
 }
