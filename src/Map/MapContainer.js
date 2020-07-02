@@ -102,7 +102,6 @@ const MapContainer = (props) => {
           animation={props.google.maps.Animation.BOUNCE}
           position={secondPlaceCoordinate}
         />
-
         <InfoWindow
           onClose={(e) => onInfoWindowClose(e)}
           marker={activeMarker}
