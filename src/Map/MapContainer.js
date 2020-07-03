@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Map,
   InfoWindow,
@@ -33,10 +33,19 @@ const secondPlaceCoordinate = {
 const icon =
   "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
 
-const MapContainer = (props) => {
+const MapContainer = ({
+  google,
+  loaded,
+  firstCoordinate,
+  secondCoordinate,
+}) => {
   const [showingInfoWindow, setShowingInfoWindow] = useState(true);
   const [activeMarker, setActiveMarker] = useState({});
   const [selectedPlace, setSelectedPlace] = useState({});
+
+  useEffect(() => {
+    console.log("useEffect", secondCoordinate.coordinate);
+  }, []);
 
   const onMapClick = (props, map, clickEvent) => {
     if (showingInfoWindow) {
@@ -45,12 +54,12 @@ const MapContainer = (props) => {
     }
 
     const latLong1 = new window.google.maps.LatLng(
-      firstPlaceCoordinate.lat,
-      firstPlaceCoordinate.lng
+      firstCoordinate.coordinate.lat,
+      firstCoordinate.coordinate.lng
     );
     const latLong2 = new window.google.maps.LatLng(
-      secondPlaceCoordinate.lat,
-      secondPlaceCoordinate.lng
+      secondCoordinate.coordinate.lat,
+      secondCoordinate.coordinate.lng
     );
     const distance = window.google.maps.geometry.spherical.computeDistanceBetween(
       latLong1,
@@ -67,7 +76,7 @@ const MapContainer = (props) => {
   };
 
   const onMarkerClick = (props, marker) => {
-    console.log("marker click", props, marker);
+    //console.log("marker click", props, marker);
     setSelectedPlace(props);
     setActiveMarker(marker);
     setShowingInfoWindow(true);
@@ -76,14 +85,14 @@ const MapContainer = (props) => {
   return (
     <>
       <Map
-        google={props.google}
+        google={google}
         zoom={10}
         style={mapStyles}
         initialCenter={initialCenter}
         onClick={onMapClick}
       >
         <Polyline
-          path={[firstPlaceCoordinate, secondPlaceCoordinate]}
+          path={[firstCoordinate.coordinate, secondCoordinate.coordinate]}
           strokeColor="#FF0000"
           strokeOpacity={0.8}
           strokeWeight={6}
@@ -91,16 +100,16 @@ const MapContainer = (props) => {
 
         <Marker
           onClick={onMarkerClick}
-          name="Zielona Góra City"
-          position={firstPlaceCoordinate}
-          animation={props.google.maps.Animation.DROP}
+          name={firstCoordinate.name}
+          position={firstCoordinate.coordinate}
+          animation={google.maps.Animation.DROP}
         />
         <Marker
           onClick={onMarkerClick}
-          name="Nowa Sól City"
+          name={secondCoordinate.name}
           icon={icon}
-          animation={props.google.maps.Animation.BOUNCE}
-          position={secondPlaceCoordinate}
+          animation={google.maps.Animation.BOUNCE}
+          position={secondCoordinate.coordinate}
         />
         <InfoWindow
           onClose={(e) => onInfoWindowClose(e)}

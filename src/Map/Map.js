@@ -39,8 +39,8 @@ const Map = () => {
       </div>
       {firstPlaceCoordinate && secondPlaceCoordinate && (
         <MapContainer
-          firstPlaceCoordinate={firstPlaceCoordinate}
-          secondPlaceCoordinate={secondPlaceCoordinate}
+          firstCoordinate={firstPlaceCoordinate}
+          secondCoordinate={secondPlaceCoordinate}
         />
       )}
     </>
