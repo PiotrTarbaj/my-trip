@@ -16,14 +16,11 @@ const mapStyles = {
 };
 
 const initialCenter = {
-  lat: 51.9377276,
-  lng: 15.5028484,
+  lat: 51.9431453,
+  lng: 19.2254742,
 };
 
-const firstPlaceCoordinate = {
-  lat: 51.9377276,
-  lng: 15.5028484,
-};
+const initialZoom = 6.63;
 
 const secondPlaceCoordinate = {
   lat: 51.815222,
@@ -42,10 +39,6 @@ const MapContainer = ({
   const [showingInfoWindow, setShowingInfoWindow] = useState(true);
   const [activeMarker, setActiveMarker] = useState({});
   const [selectedPlace, setSelectedPlace] = useState({});
-
-  useEffect(() => {
-    console.log("useEffect", secondCoordinate.coordinate);
-  }, []);
 
   const onMapClick = (props, map, clickEvent) => {
     if (showingInfoWindow) {
@@ -76,7 +69,6 @@ const MapContainer = ({
   };
 
   const onMarkerClick = (props, marker) => {
-    //console.log("marker click", props, marker);
     setSelectedPlace(props);
     setActiveMarker(marker);
     setShowingInfoWindow(true);
@@ -86,7 +78,7 @@ const MapContainer = ({
     <>
       <Map
         google={google}
-        zoom={10}
+        zoom={initialZoom}
         style={mapStyles}
         initialCenter={initialCenter}
         onClick={onMapClick}
