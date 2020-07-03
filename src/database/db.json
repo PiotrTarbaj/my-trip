@@ -5,32 +5,16 @@
       "model": "Mondeo",
       "fuel": "benzyna",
       "average": "6.75",
-      "speed": "77",
+      "speed": "45",
       "id": 1
     },
     {
       "brand": "Renault",
       "model": "Megane",
       "fuel": "olej napędowy",
-      "average": "4",
+      "average": "7,2",
       "speed": "77",
       "id": 2
-    },
-    {
-      "brand": "",
-      "model": "",
-      "fuel": "",
-      "average": "",
-      "speed": "",
-      "id": 3
-    },
-    {
-      "brand": "",
-      "model": "",
-      "fuel": "",
-      "average": "",
-      "speed": "",
-      "id": 4
     }
   ],
   "fuel": [
