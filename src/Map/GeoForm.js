@@ -12,7 +12,10 @@ const GeoForm = ({ label, onSelect }) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.type === "FeatureCollection") {
-          setApiResults(data.features);
+          //zdublowanie pierwszej wartości, aby onChange listy rozwijalnej zadziałał i można było wybrać tą pierwszą wartośc
+          if (data.features.length > 0) {
+            setApiResults([data.features[0], ...data.features]);
+          }
         }
       })
       .catch((error) => {

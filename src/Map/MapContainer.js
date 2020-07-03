@@ -22,43 +22,64 @@ const initialCenter = {
 
 const initialZoom = 6.63;
 
-const secondPlaceCoordinate = {
-  lat: 51.815222,
-  lng: 15.717336,
-};
-
 const icon =
   "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
 
 const MapContainer = ({
   google,
-  loaded,
   firstCoordinate,
   secondCoordinate,
+  getDistance,
 }) => {
   const [showingInfoWindow, setShowingInfoWindow] = useState(true);
   const [activeMarker, setActiveMarker] = useState({});
   const [selectedPlace, setSelectedPlace] = useState({});
 
-  const onMapClick = (props, map, clickEvent) => {
+  const calcDistance = () => {
+    // http://www.movable-type.co.uk/scripts/latlong.html
+    const lat1 = firstCoordinate.coordinate.lat;
+    const lon1 = firstCoordinate.coordinate.lng;
+
+    const lat2 = secondCoordinate.coordinate.lat;
+    const lon2 = secondCoordinate.coordinate.lng;
+
+    const R = 6371e3; // earth radius in meters
+    const φ1 = lat1 * (Math.PI / 180);
+    const φ2 = lat2 * (Math.PI / 180);
+    const Δφ = (lat2 - lat1) * (Math.PI / 180);
+    const Δλ = (lon2 - lon1) * (Math.PI / 180);
+
+    const a =
+      Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+      Math.cos(φ1) * Math.cos(φ2) * (Math.sin(Δλ / 2) * Math.sin(Δλ / 2));
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    return ((R * c) / 1000).toFixed(1);
+  };
+
+  useEffect(() => {
+    getDistance(calcDistance());
+  }, [firstCoordinate, secondCoordinate]);
+
+  const onMapClick = () => {
     if (showingInfoWindow) {
       setShowingInfoWindow(false);
       setActiveMarker(null);
     }
-
-    const latLong1 = new window.google.maps.LatLng(
+    const latLong1 = new google.maps.LatLng(
       firstCoordinate.coordinate.lat,
       firstCoordinate.coordinate.lng
     );
-    const latLong2 = new window.google.maps.LatLng(
+    const latLong2 = new google.maps.LatLng(
       secondCoordinate.coordinate.lat,
       secondCoordinate.coordinate.lng
     );
-    const distance = window.google.maps.geometry.spherical.computeDistanceBetween(
+    const distance = google.maps.geometry.spherical.computeDistanceBetween(
       latLong1,
       latLong2
     );
-    console.log(distance);
+    console.log((distance / 1000).toFixed(1), calcDistance());
   };
 
   const onInfoWindowClose = () => {
@@ -109,7 +130,9 @@ const MapContainer = ({
           visible={showingInfoWindow}
         >
           <div>
-            <h4>{selectedPlace && selectedPlace.name}</h4>
+            <h4 className="marker-info">
+              {selectedPlace && selectedPlace.name}
+            </h4>
           </div>
         </InfoWindow>
       </Map>

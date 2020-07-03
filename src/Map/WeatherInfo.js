@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const WeatherInfo = () => {
+const WeatherInfo = ({ placeCoordinate }) => {
   const [isData, setIsData] = useState(false);
   const [apiResultsWeather, setApiResultsWeather] = useState([]);
   const [apiResultsMain, setApiResultsMain] = useState([]);
 
   const apiKey = "562b8ae9683647da716b61115038f714";
-
-  const placeCoordinate = {
-    lat: 51.940267,
-    lng: 15.507312,
-  };
 
   useEffect(() => {
     const API = `https://api.openweathermap.org/data/2.5/weather?lang=pl&units=metric&lat=${placeCoordinate.lat}&lon=${placeCoordinate.lng}&appid=${apiKey}`;
@@ -35,20 +30,17 @@ const WeatherInfo = () => {
       .catch((error) => {
         setIsData(false);
       });
-  }, []);
+  }, [placeCoordinate]);
 
   return (
     <>
       {isData && (
-        <div>
-          <h1>WeatherInfo</h1>
+        <div className="weather-container">
           <img
             src={`http://openweathermap.org/img/wn/${apiResultsWeather.icon}@4x.png`}
             alt={apiResultsWeather.main}
           />
-          <h4 style={{ textTransform: "capitalize" }}>
-            {apiResultsWeather.description}
-          </h4>
+          <h4>{apiResultsWeather.description}</h4>
           <ul>
             <li>
               <strong>Temperatura:</strong> {apiResultsMain.temp}°C
