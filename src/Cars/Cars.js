@@ -36,6 +36,11 @@ const Cars = () => {
     setAdd(true);
   };
 
+  const handleCancel = () => {
+    setEdit(false);
+    setAdd(false);
+  };
+
   const deleteSelectedFromAPI = (id) => {
     fetch(`http://localhost:3000/cars/${id}`, {
       method: "DELETE",
@@ -55,8 +60,21 @@ const Cars = () => {
       <div className="background-fixed"></div>
       <h1>Moje samochody</h1>
       <button onClick={handleClick}>Dodaj samochód</button>
-      {isEdit && <EditCar car={isEdit} onSave={handleSave} />}
-      {isAdd && <AddCar onAdd={handleAdd} />}
+      {isEdit && (
+        <EditCar
+          car={isEdit}
+          onSave={handleSave}
+          onCancel={handleCancel}
+          title="Edytuj samochód"
+        />
+      )}
+      {isAdd && (
+        <AddCar
+          onAdd={handleAdd}
+          onCancel={handleCancel}
+          title="Dodaj samochód"
+        />
+      )}
       <ul>
         {cars.length > 0 &&
           cars.map((car, i) => (
