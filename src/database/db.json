@@ -1,20 +1,12 @@
 {
   "cars": [
     {
-      "brand": "Ford",
-      "model": "Mondeo",
-      "fuel": "benzyna",
-      "average": "6.75",
-      "speed": "45",
-      "id": 1
-    },
-    {
       "brand": "Renault",
       "model": "Megane",
-      "fuel": "olej napędowy",
-      "average": "7,2",
-      "speed": "77",
-      "id": 2
+      "fuel": "benzyna",
+      "average": "10",
+      "speed": "70",
+      "id": 1
     }
   ],
   "fuel": [
