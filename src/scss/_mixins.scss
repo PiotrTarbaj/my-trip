@@ -59,7 +59,7 @@
 }
 
 @mixin container-form-edit {
-  width: 30vw;
+  width: 20vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -70,14 +70,26 @@
   padding: 20px;
   margin: 20px 0;
   form {
-    width: 50%;
+    width: 80%;
+    margin: 0 0 20px 0;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    input[type="submit"] {
+    h2 {
+      text-align: center;
+      font-weight: 700;
+      color: white;
+      line-height: 4rem;
+    }
+    input,
+    select {
+      margin: 0 0 10px 0;
+    }
+    input[type="submit"],
+    input[type="button"] {
       @include button-action-reverse;
-      margin: 20px 0;
+      margin: 0 0 10px 0;
     }
   }
 }
