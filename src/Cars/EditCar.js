@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Fuels from "../Fuels/Fuels";
 
-const EditCar = ({ car, onSave }) => {
+const EditCar = ({ car, title, onSave, onCancel }) => {
   const [brand, setBrand] = useState(car.brand);
   const [model, setModel] = useState(car.model);
   const [fuel, setFuel] = useState(car.fuel);
@@ -30,9 +30,14 @@ const EditCar = ({ car, onSave }) => {
       });
   };
 
+  const handleCancel = () => {
+    onCancel();
+  };
+
   return (
     <div className="container-cars--edit">
       <form onSubmit={handleSubmit}>
+        <h2 className="container-cars--title">{title}</h2>
         <label>Marka:</label>
         <input
           type="text"
@@ -53,7 +58,9 @@ const EditCar = ({ car, onSave }) => {
         <Fuels show="select" value={fuel} onChange={setFuel} />
         <label>Średnie spalanie:</label>
         <input
-          type="text"
+          type="number"
+          min="0"
+          max="100"
           name="average"
           placeholder="Średnie spalanie"
           value={average}
@@ -61,13 +68,16 @@ const EditCar = ({ car, onSave }) => {
         />
         <label>Średnia prędkość:</label>
         <input
-          type="text"
+          type="number"
+          min="0"
+          max="300"
           name="speed"
           placeholder="Średnia prędkość"
           value={speed}
           onChange={(e) => setSpeed(e.target.value)}
         />
         <input type="submit" value="Zapisz" />
+        <input type="button" value="Anuluj" onClick={() => handleCancel()} />
       </form>
     </div>
   );
